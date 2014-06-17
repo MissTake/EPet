@@ -1,0 +1,22 @@
+Initialize engine version: 4.5.0f6 (fd4616464986)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: ATI Mobility Radeon HD 5400 Series (ID=0x68e0)
+    Vendor:   ATI
+    VRAM:     504 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: F:\Dokumente\HTW\SUIT\EPetProject\win_01_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading F:\Dokumente\HTW\SUIT\EPetProject\win_01_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: F:\Dokumente\HTW\SUIT\EPetProject\win_01_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading F:\Dokumente\HTW\SUIT\EPetProject\win_01_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: F:\Dokumente\HTW\SUIT\EPetProject\win_01_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading F:\Dokumente\HTW\SUIT\EPetProject\win_01_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: F:\Dokumente\HTW\SUIT\EPetProject\win_01_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
+Loading F:\Dokumente\HTW\SUIT\EPetProject\win_01_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
+Platform assembly: F:\Dokumente\HTW\SUIT\EPetProject\win_01_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading F:\Dokumente\HTW\SUIT\EPetProject\win_01_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+- Completed reload, in  0.170 seconds
+desktop: 1366x768 60Hz; virtual: 3046x1050 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
