@@ -38,7 +38,7 @@ public class pet_behavior : MonoBehaviour {
 		timer += Time.deltaTime;
 
 		//check if the Object Pet is clicked
-		if(Input.GetMouseButtonDown(0) && ClickManager.IsClicked(Input.mousePosition, "Pet"))
+		if(Input.GetMouseButtonDown(0) && ClickManager.IsClicked(Input.mousePosition, this.name))
 		{
 			clickedTime = timer;
 		    if((timer-clickedTime)<0.3)

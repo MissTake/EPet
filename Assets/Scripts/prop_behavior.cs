@@ -12,7 +12,7 @@ public class prop_behavior : MonoBehaviour {
 	void Update () {
 
 
-		if(Input.GetMouseButton(0) && ClickManager.IsClicked(Input.mousePosition, "game"))
+		if(Input.GetMouseButton(0) && ClickManager.IsClicked(Input.mousePosition, this.name))
 		{
 			Debug.Log("Game Object Clicked");
 		}

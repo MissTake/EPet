@@ -24,7 +24,6 @@ public class ClickManager : MonoBehaviour {
 		
 		if(Physics.Raycast(ray, out hit, 200))
 		{
-			var objecthit = hit.transform as Transform;
 			
 			if(hit.collider.name == objectname)
 			{
