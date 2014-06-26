@@ -7,6 +7,9 @@ public class reactiongame_element_behavior : MonoBehaviour {
 	private float keepState;
 	private float nextState;
 	public bool state;
+	// ToDo: Level management
+	int level;
+
 
 
 
@@ -19,8 +22,8 @@ public class reactiongame_element_behavior : MonoBehaviour {
 		keepState = Random.Range(2, 10);
 		nextState = 0f;
 		state = false;
+		level = 1;
 
-	
 	}
 	
 	// Update is called once per frame
@@ -29,16 +32,18 @@ public class reactiongame_element_behavior : MonoBehaviour {
 		Sprite spr;
 		SpriteRenderer sprRenderer = (SpriteRenderer)renderer;
 
+
+
 		//wenn die Zeit, die das objekt im Status bleiben soll,
 		//vergangen ist, dann soll der nächste status ermittelt werden.
-		if((lastChanged + keepState) - timer <= 0)
+		if((lastChanged + keepState) - timer <= 0 && ((state && Input.GetMouseButtonDown(0) && !ClickManager.IsClicked(Input.mousePosition, this.name)) || !Input.GetMouseButton(0) ))
 		{
 			nextState = Random.value;
-			if(nextState >= 0f && nextState < 0.7)
+			if(nextState >= 0f && nextState < 0.8)
 			{
 				state = false;
 			}
-			else if(nextState >= 0.7 && nextState < 1f)
+			else if(nextState >= 0.8 && nextState < 1f)
 			{
 				state = true;
 			}
@@ -50,13 +55,13 @@ public class reactiongame_element_behavior : MonoBehaviour {
 			if(state)
 			{
 				spr = Resources.Load<Sprite>("good");
-				Debug.Log("State Good" + this.name);
+				//Debug.Log("State Good" + this.name);
 				sprRenderer.sprite = spr;
 			}
 			else if(!state)
 			{
-				spr = Resources.Load<Sprite>("empty");
-				Debug.Log("State Empty" + this.name);
+				spr = Resources.Load<Sprite>("");
+				//Debug.Log("State Empty" + this.name);
 				sprRenderer.sprite = spr;
 			}
 			else
@@ -66,12 +71,45 @@ public class reactiongame_element_behavior : MonoBehaviour {
 			//Debug.Log("State value" + nextState);
 
 			//muss noch statusabhängig gemacht werden --> leeres feld soll länger sein als besetztes feld
-			keepState = Random.Range(2, 10);
+			if(state)
+			{
+				keepState = 2f;
+			}
+			else if(!state)
+			{
+			keepState = Random.Range(1, 5);
+			}
 			//Debug.Log("keep in State for " + keepState);
 			//Debug.Log("ObjectName: " + this.name);
 			lastChanged = timer;
 
 		}
+		else if(state && Input.GetMouseButtonDown(0) && ClickManager.IsClicked(Input.mousePosition, this.name))
+		{
+			Debug.Log("Object hit " + this.name);
+			state = false;
+			lastChanged = timer;
+			spr = Resources.Load<Sprite>("");
+			//Debug.Log("State Empty" + this.name);
+			sprRenderer.sprite = spr;
+			keepState = Random.Range(1, 5);
+		}
+		else
+		{
+			//Debug.Log("I am in else");
+		}
+
+
+		
+//		if(Input.GetMouseButtonDown(0) && ClickManager.IsClicked(Input.mousePosition, this.name) && this.state)
+//		{
+//			Debug.Log("Object hit " + this.name);
+//			//feedbacktext_behavior.setText("Object hit");
+//		}
+//		else if(Input.GetMouseButtonDown(0) && (!ClickManager.IsClicked(Input.mousePosition, this.name) || !this.state))
+//		{
+//			Debug.Log("Did not hit");
+//		}
 	
 	}
 }

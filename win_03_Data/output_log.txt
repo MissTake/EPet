@@ -1,0 +1,126 @@
+Initialize engine version: 4.5.0f6 (fd4616464986)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: ATI Mobility Radeon HD 5400 Series (ID=0x68e0)
+    Vendor:   ATI
+    VRAM:     504 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: F:\Dokumente\HTW\SUIT\EPetProject\win_03_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading F:\Dokumente\HTW\SUIT\EPetProject\win_03_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: F:\Dokumente\HTW\SUIT\EPetProject\win_03_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading F:\Dokumente\HTW\SUIT\EPetProject\win_03_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: F:\Dokumente\HTW\SUIT\EPetProject\win_03_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading F:\Dokumente\HTW\SUIT\EPetProject\win_03_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: F:\Dokumente\HTW\SUIT\EPetProject\win_03_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
+Loading F:\Dokumente\HTW\SUIT\EPetProject\win_03_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
+Platform assembly: F:\Dokumente\HTW\SUIT\EPetProject\win_03_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading F:\Dokumente\HTW\SUIT\EPetProject\win_03_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+- Completed reload, in  0.082 seconds
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+UnloadTime: 0.456973 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 122 unused Assets to reduce memory usage. Loaded Objects now: 183.
+Total: 0.716936 ms (FindLiveObjects: 0.013134 ms CreateObjectMapping: 0.015398 ms MarkObjects: 0.081974 ms  DeleteObjects: 0.194745 ms)
+
+Object hit 06
+ 
+(Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Object hit 01
+ 
+(Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Object hit 05
+ 
+(Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Object hit 02
+ 
+(Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Object hit 01
+ 
+(Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Object hit 09
+ 
+(Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Object hit 05
+ 
+(Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Object hit 04
+ 
+(Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Object hit 02
+ 
+(Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Object hit 09
+ 
+(Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Object hit 05
+ 
+(Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Object hit 01
+ 
+(Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Object hit 08
+ 
+(Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Object hit 01
+ 
+(Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Object hit 03
+ 
+(Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Object hit 07
+ 
+(Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Object hit 04
+ 
+(Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Object hit 05
+ 
+(Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Object hit 04
+ 
+(Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Object hit 08
+ 
+(Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Object hit 06
+ 
+(Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Object hit 04
+ 
+(Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+UnloadTime: 0.605976 ms
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 290.
+Total: 0.784870 ms (FindLiveObjects: 0.017210 ms CreateObjectMapping: 0.022644 ms MarkObjects: 0.133604 ms  DeleteObjects: 0.018115 ms)
+
+quit game
+ 
+(Filename: C:/BuildAgent/work/aeedb04a1292f85a/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+

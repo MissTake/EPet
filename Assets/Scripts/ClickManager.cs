@@ -27,7 +27,7 @@ public class ClickManager : MonoBehaviour {
 			
 			if(hit.collider.name == objectname)
 			{
-				Debug.Log("object clicked" + hit.collider.name);
+				//Debug.Log("object clicked" + hit.collider.name);
 				return true;
 			}
 		}
