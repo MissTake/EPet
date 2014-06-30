@@ -10,7 +10,8 @@ public class reactiongame_element_behavior : MonoBehaviour {
 	// ToDo: Level management
 	int level;
 
-
+	//Animator laden
+	public Animator animator;
 
 
 
@@ -23,6 +24,11 @@ public class reactiongame_element_behavior : MonoBehaviour {
 		nextState = 0f;
 		state = false;
 		level = 1;
+
+		animator = GetComponentInChildren<Animator>();
+		animator.SetBool("is_hit", false);
+		animator.SetBool("not_hit", false);
+		animator.SetBool("appear", false);
 
 	}
 	
@@ -54,15 +60,19 @@ public class reactiongame_element_behavior : MonoBehaviour {
 
 			if(state)
 			{
-				spr = Resources.Load<Sprite>("good");
+				//spr = Resources.Load<Sprite>("good");
 				//Debug.Log("State Good" + this.name);
-				sprRenderer.sprite = spr;
+				//sprRenderer.sprite = spr;
+				this.animator.SetBool("appear", true);
 			}
 			else if(!state)
 			{
-				spr = Resources.Load<Sprite>("");
+				//spr = Resources.Load<Sprite>("");
 				//Debug.Log("State Empty" + this.name);
-				sprRenderer.sprite = spr;
+				//sprRenderer.sprite = spr;
+				//this.animator.SetBool("appear", false);
+				StartCoroutine("notHit");
+				animator.SetBool("appear", false);
 			}
 			else
 			{
@@ -89,9 +99,11 @@ public class reactiongame_element_behavior : MonoBehaviour {
 			Debug.Log("Object hit " + this.name);
 			state = false;
 			lastChanged = timer;
-			spr = Resources.Load<Sprite>("");
+			//spr = Resources.Load<Sprite>("");
 			//Debug.Log("State Empty" + this.name);
-			sprRenderer.sprite = spr;
+			//sprRenderer.sprite = spr;
+			StartCoroutine("hit");
+			animator.SetBool("appear", false);
 			keepState = Random.Range(1, 5);
 		}
 		else
@@ -112,4 +124,24 @@ public class reactiongame_element_behavior : MonoBehaviour {
 //		}
 	
 	}
+
+
+	public IEnumerator hit()
+	{
+		animator.SetBool("is_hit", true);
+		yield return new WaitForSeconds(1.1f);
+		animator.SetBool("is_hit", false);
+		yield return new WaitForSeconds(0f);
+	}
+
+	public IEnumerator notHit()
+	{
+		animator.SetBool("not_hit", true);
+		yield return new WaitForSeconds(1.1f);
+		animator.SetBool("not_hit", false);
+		yield return new WaitForSeconds(0f);
+	}
+	
+	
+
 }
