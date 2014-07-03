@@ -12,6 +12,7 @@ public class reactiongame_element_behavior : MonoBehaviour {
 
 	//Animator laden
 	public Animator animator;
+	private static int count;
 
 
 
@@ -24,6 +25,7 @@ public class reactiongame_element_behavior : MonoBehaviour {
 		nextState = 0f;
 		state = false;
 		level = 1;
+		count = 0;
 
 		animator = GetComponentInChildren<Animator>();
 		animator.SetBool("is_hit", false);
@@ -103,6 +105,8 @@ public class reactiongame_element_behavior : MonoBehaviour {
 			//Debug.Log("State Empty" + this.name);
 			//sprRenderer.sprite = spr;
 			StartCoroutine("hit");
+			count += 1;
+			Debug.Log("Count = " + count);
 			animator.SetBool("appear", false);
 			keepState = Random.Range(1, 5);
 		}
@@ -111,7 +115,10 @@ public class reactiongame_element_behavior : MonoBehaviour {
 			//Debug.Log("I am in else");
 		}
 
-
+		if (count >= 20)
+		{
+			Debug.Log("You Win!" + timer.ToString());
+		}
 		
 //		if(Input.GetMouseButtonDown(0) && ClickManager.IsClicked(Input.mousePosition, this.name) && this.state)
 //		{
