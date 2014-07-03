@@ -14,6 +14,8 @@ public class reactiongame_element_behavior : MonoBehaviour {
 	public Animator animator;
 	private static int count;
 
+	public winpet_behavior pet;
+
 
 
 
@@ -41,6 +43,19 @@ public class reactiongame_element_behavior : MonoBehaviour {
 		SpriteRenderer sprRenderer = (SpriteRenderer)renderer;
 
 
+		//wurde das spiel gewonnen?
+		if (count >= 12)
+		{
+			//Debug.Log("You Win!" + timer.ToString());
+			//winpet_behavior.
+			pet.setAnimation("win");
+			animator.SetBool("appear", false);
+			animator.SetBool("is_hit", false);
+			animator.SetBool("not_hit", false);
+			
+			//Application.LoadLevel("scene01");
+			
+		}
 
 		//wenn die Zeit, die das objekt im Status bleiben soll,
 		//vergangen ist, dann soll der nächste status ermittelt werden.
@@ -115,10 +130,6 @@ public class reactiongame_element_behavior : MonoBehaviour {
 			//Debug.Log("I am in else");
 		}
 
-		if (count >= 20)
-		{
-			Debug.Log("You Win!" + timer.ToString());
-		}
 		
 //		if(Input.GetMouseButtonDown(0) && ClickManager.IsClicked(Input.mousePosition, this.name) && this.state)
 //		{
