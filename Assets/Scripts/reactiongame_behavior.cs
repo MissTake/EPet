@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class reactiongame_behavior : MonoBehaviour {
-	public
+	//private GameObject test = Resources.Load("pet");
 
 
 	// Use this for initialization

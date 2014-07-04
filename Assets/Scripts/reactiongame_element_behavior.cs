@@ -6,9 +6,10 @@ public class reactiongame_element_behavior : MonoBehaviour {
 	private float lastChanged;
 	private float keepState;
 	private float nextState;
-	public bool state;
+	private bool state;
 	// ToDo: Level management
 	int level;
+	public int roundcount;
 
 	//Animator laden
 	public Animator animator;
@@ -28,6 +29,7 @@ public class reactiongame_element_behavior : MonoBehaviour {
 		state = false;
 		level = 1;
 		count = 0;
+		roundcount = 12;
 
 		animator = GetComponentInChildren<Animator>();
 		animator.SetBool("is_hit", false);
@@ -44,7 +46,7 @@ public class reactiongame_element_behavior : MonoBehaviour {
 
 
 		//wurde das spiel gewonnen?
-		if (count >= 12)
+		if (count >= roundcount)
 		{
 			//Debug.Log("You Win!" + timer.ToString());
 			//winpet_behavior.
