@@ -8,6 +8,9 @@ public class pet_behavior : MonoBehaviour {
 	public static Animator animator;
 	private float clickedTime;
 	private float timer = 0;
+	private float clickStartTime;
+	private Vector2 clickStartPosition;
+	private bool petClicked;
 
 
 	// Use this for initialization
@@ -19,6 +22,9 @@ public class pet_behavior : MonoBehaviour {
 		animator.SetBool("is_purred", false);
 		speed = 0.1f;
 		clickedTime = 0f;
+		clickStartTime = 0;
+		clickStartPosition.Set(0, 0);
+		petClicked = false;
 	
 	}
 
@@ -39,6 +45,51 @@ public class pet_behavior : MonoBehaviour {
 		timer += Time.deltaTime;
 		//float clickTime = 0f;
 
+
+
+		//---------------------------start velocity test
+
+		float speed = 0;
+
+		if(Input.GetMouseButtonDown(0) && ClickManager.IsClicked(Input.mousePosition, this.name))
+		{
+			clickStartTime = timer;
+			clickStartPosition = Input.mousePosition;
+			petClicked = true;
+
+		}
+		else if(Input.GetMouseButtonDown(0) && !ClickManager.IsClicked(Input.mousePosition, this.name))
+		{
+			petClicked = false;
+		}
+
+		if(Input.GetMouseButton(0) && petClicked)
+		{
+			//speed = sqrt(x²+y²) / deltatime
+			float tmpx = Input.mousePosition.x-clickStartPosition.x;
+			float tmpy = Input.mousePosition.y - clickStartPosition.y;
+			speed = Mathf.Sqrt((tmpx * tmpx) + (tmpy * tmpy)) / (timer - clickStartTime);
+			Debug.Log("speed: " + speed);
+			clickStartTime = timer;
+			clickStartPosition = Input.mousePosition;
+			//if()
+			//{
+			//
+			//}
+		}
+
+
+
+
+
+
+		//---------------------------end velocity test
+
+
+
+
+
+
 		if(Input.GetMouseButtonDown(0))
 		{
 			clickedTime = timer;
@@ -50,12 +101,12 @@ public class pet_behavior : MonoBehaviour {
 			if(ClickManager.IsClicked(Input.mousePosition, this.name))
 			{
 
-				Debug.Log("object is clicked");
+				//Debug.Log("object is clicked");
 
 				if(timer - clickedTime < 0.6)
 				{
 					//animator.SetBool("is_tickled", true);
-					Debug.Log("hihi");
+					//Debug.Log("hihi");
 					StartCoroutine("tickle");
 
 				}
@@ -64,11 +115,11 @@ public class pet_behavior : MonoBehaviour {
 					//animator.SetBool("is_tickled", false);
 					animator.SetBool("is_purred", true);
 					//StartCoroutine("purr");
-					Debug.Log("*schnurr*");
+					//Debug.Log("*schnurr*");
 				}
 				else
 				{
-					animator.SetBool("is_tickled", false);
+					//animator.SetBool("is_tickled", false);
 					Debug.Log("clicked time smaller than zero...");
 				}
 
@@ -83,13 +134,14 @@ public class pet_behavior : MonoBehaviour {
 			else
 			{
 				//animator.SetBool("is_tickled", false);
-				Debug.Log("object not clicked");
+				//Debug.Log("object not clicked");
 			}
 		}
 
 		if(Input.GetMouseButtonUp(0))
 		{
 			animator.SetBool("is_purred", false);
+			petClicked = false;
 		}
 
 		//if(timer-clickedTime>0.3)
