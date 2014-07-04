@@ -16,6 +16,7 @@ public class pet_behavior : MonoBehaviour {
 		animator = GetComponentInChildren<Animator>();
 		animator.SetBool("is_noticed", false);
 		animator.SetBool("is_tickled", false);
+		animator.SetBool("is_purred", false);
 		speed = 0.1f;
 		clickedTime = 0f;
 	
@@ -36,22 +37,65 @@ public class pet_behavior : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timer += Time.deltaTime;
+		//float clickTime = 0f;
 
-		//check if the Object Pet is clicked
-		if(Input.GetMouseButtonDown(0) && ClickManager.IsClicked(Input.mousePosition, this.name))
+		if(Input.GetMouseButtonDown(0))
 		{
 			clickedTime = timer;
-		    if((timer-clickedTime)<0.3)
-			{
-			animator.SetBool("is_tickled", true);
-			}
-
 		}
 
-		if(timer-clickedTime>0.3)
+		//check if the Object Pet is clicked
+		if(Input.GetMouseButton(0))
 		{
-			animator.SetBool("is_tickled", false);
+			if(ClickManager.IsClicked(Input.mousePosition, this.name))
+			{
+
+				Debug.Log("object is clicked");
+
+				if(timer - clickedTime < 0.6)
+				{
+					//animator.SetBool("is_tickled", true);
+					Debug.Log("hihi");
+					StartCoroutine("tickle");
+
+				}
+				else if(timer-clickedTime >=0.6)
+				{
+					//animator.SetBool("is_tickled", false);
+					animator.SetBool("is_purred", true);
+					//StartCoroutine("purr");
+					Debug.Log("*schnurr*");
+				}
+				else
+				{
+					animator.SetBool("is_tickled", false);
+					Debug.Log("clicked time smaller than zero...");
+				}
+
+
+
+			    //if((timer-clickedTime)<0.3)
+				//{
+				//animator.SetBool("is_tickled", true);
+				//}
+
+			}
+			else
+			{
+				//animator.SetBool("is_tickled", false);
+				Debug.Log("object not clicked");
+			}
 		}
+
+		if(Input.GetMouseButtonUp(0))
+		{
+			animator.SetBool("is_purred", false);
+		}
+
+		//if(timer-clickedTime>0.3)
+		//{
+		//	animator.SetBool("is_tickled", false);
+		//}
 		
 		/*
 
@@ -140,5 +184,21 @@ public class pet_behavior : MonoBehaviour {
 		//	animator.SetBool("isNoticed", false);
 		//}
 	
+	}
+
+	public IEnumerator tickle()
+	{
+		animator.SetBool("is_tickled", true);
+		yield return new WaitForSeconds(0.6f);
+		animator.SetBool("is_tickled", false);
+		yield return new WaitForSeconds(0f);
+	}
+
+	public IEnumerator purr()
+	{
+		animator.SetBool("is_purred", true);
+		yield return new WaitForSeconds(1f);
+		animator.SetBool("is_purred", false);
+		yield return new WaitForSeconds(0f);
 	}
 }
