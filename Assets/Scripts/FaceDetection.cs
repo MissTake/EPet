@@ -7,16 +7,16 @@ public class FaceDetection : MonoBehaviour {
 
 	void Start () {
 		seesomething = false;
-		Sprite spr = Resources.Load<Sprite>("IDontSeeYou");
-		SpriteRenderer sprRenderer = (SpriteRenderer)renderer;
-		sprRenderer.sprite = spr;
+		//Sprite spr = Resources.Load<Sprite>("IDontSeeYou");
+		//SpriteRenderer sprRenderer = (SpriteRenderer)renderer;
+		//sprRenderer.sprite = spr;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-
-
+		//-----do not switch between detected and not detected
+		/*
 		//toggle between face detected and no face detected
 		if(Input.GetMouseButtonDown(0) && ClickManager.IsClicked(Input.mousePosition, "ISeeYou") && seesomething == false)
 		{
@@ -35,7 +35,7 @@ public class FaceDetection : MonoBehaviour {
 			SpriteRenderer sprRenderer = (SpriteRenderer)renderer;
 			sprRenderer.sprite = spr;
 		}
-
+		*/
 	
 	}
 }
